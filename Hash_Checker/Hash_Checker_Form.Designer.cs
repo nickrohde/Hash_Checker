@@ -1,6 +1,6 @@
 ﻿namespace Hash_checker
 {
-    partial class Hash_Checker_Form
+    partial class HashCheckerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -49,7 +49,7 @@
             this.select_file.TabIndex = 0;
             this.select_file.Text = "Select File ...";
             this.select_file.UseVisualStyleBackColor = true;
-            this.select_file.Click += new System.EventHandler(this.Select_file_click);
+            this.select_file.Click += new System.EventHandler(this.SelectFile_OnClick);
             // 
             // file_name_lbl
             // 
@@ -69,7 +69,7 @@
             this.calculate_md5.TabIndex = 2;
             this.calculate_md5.Text = "Calculate Hash";
             this.calculate_md5.UseVisualStyleBackColor = true;
-            this.calculate_md5.Click += new System.EventHandler(this.Calculate_hash_Click);
+            this.calculate_md5.Click += new System.EventHandler(this.CalculateHash_OnClick);
             // 
             // hash_lbl
             // 
@@ -91,7 +91,7 @@
             this.verify_hash_checkbox.TabIndex = 4;
             this.verify_hash_checkbox.Text = "Verify Hash";
             this.verify_hash_checkbox.UseVisualStyleBackColor = true;
-            this.verify_hash_checkbox.CheckedChanged += new System.EventHandler(this.Verify_checkbox_changed);
+            this.verify_hash_checkbox.CheckedChanged += new System.EventHandler(this.VerifyCheckbox_OnChanged);
             // 
             // expected_hash
             // 
@@ -100,7 +100,7 @@
             this.expected_hash.Size = new System.Drawing.Size(234, 20);
             this.expected_hash.TabIndex = 5;
             this.expected_hash.Visible = false;
-            this.expected_hash.TextChanged += new System.EventHandler(this.Calculate_hash_Click);
+            this.expected_hash.TextChanged += new System.EventHandler(this.CalculateHash_OnClick);
             // 
             // expected_lbl
             // 
@@ -147,7 +147,7 @@
             this.hash_dropdown.Name = "hash_dropdown";
             this.hash_dropdown.Size = new System.Drawing.Size(193, 21);
             this.hash_dropdown.TabIndex = 9;
-            this.hash_dropdown.SelectedIndexChanged += new System.EventHandler(this.Hash_dropdown_SelectedIndexChanged);
+            this.hash_dropdown.SelectedIndexChanged += new System.EventHandler(this.HashDropdown_OnSelectedIndexChanged);
             // 
             // label1
             // 

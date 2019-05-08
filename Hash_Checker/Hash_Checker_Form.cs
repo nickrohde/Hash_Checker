@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Hash_checker
 {
-    public partial class Hash_Checker_Form : Form
+    public partial class HashCheckerForm : Form
     {
         #region Private Members:
         // Read-only members:
@@ -38,7 +38,7 @@ namespace Hash_checker
         /// <summary>
         /// Constructor that initializes all components to defaults.
         /// </summary>
-        public Hash_Checker_Form()
+        public HashCheckerForm()
         {
             InitializeComponent();
 
@@ -62,7 +62,7 @@ namespace Hash_checker
         /// </summary>
         /// <param name="sender">Unused.</param>
         /// <param name="e">Unused.</param>
-        private void Select_file_click(object sender, EventArgs e)
+        private void SelectFile_OnClick(object sender, EventArgs e)
         {
             var result = open_file_dialog.ShowDialog();
 		
@@ -98,11 +98,11 @@ namespace Hash_checker
         /// for the selected file (in <see cref="file_path"/>) and displays the hash
         /// string in <see cref="hash_textbox"/> if both inputs were valid.
         /// If <see cref="verify_hash_checkbox"/> is checked, it also verifies the 
-        /// calculated hash for correctness using <see cref="Verify_hash_values(string)"/>.
+        /// calculated hash for correctness using <see cref="VerifyHashValues(string)"/>.
         /// </summary>
         /// <param name="sender">Unused.</param>
         /// <param name="e">Unused.</param>
-        private void Calculate_hash_Click(object sender, EventArgs e)
+        private void CalculateHash_OnClick(object sender, EventArgs e)
         {
             if (file_path == null)
             {
@@ -115,7 +115,7 @@ namespace Hash_checker
             } // end if
 			else
 			{
-				string hash = Hash_file(file_path);
+				string hash = HashFile(file_path);
 
 				if(hash != null)
 				{
@@ -124,7 +124,7 @@ namespace Hash_checker
 
 					if (verify_hash_checkbox.Checked)
 					{
-						Verify_hash_values(hash);
+						VerifyHashValues(hash);
 					} // end if verify_hash_checkbox.Checked
 				} // end if hash != null
                 else
@@ -146,7 +146,7 @@ namespace Hash_checker
         /// </summary>
         /// <param name="sender">Unused.</param>
         /// <param name="e">Unused.</param>
-        private void Verify_checkbox_changed(object sender, EventArgs e)
+        private void VerifyCheckbox_OnChanged(object sender, EventArgs e)
         {
             expected_lbl.Visible = verify_hash_checkbox.Checked;
             expected_hash.Visible = verify_hash_checkbox.Checked;
@@ -162,7 +162,7 @@ namespace Hash_checker
         /// </summary>
         /// <param name="sender">Unused.</param>
         /// <param name="e">Unused.</param>
-        private void Hash_dropdown_SelectedIndexChanged(object sender, EventArgs e)
+        private void HashDropdown_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             var selected = hash_dropdown.SelectedItem as string;
 
@@ -204,7 +204,7 @@ namespace Hash_checker
         /// displayed. 
         /// </summary>
         /// <param name="hash"></param>
-        private void Verify_hash_values(string hash)
+        private void VerifyHashValues(string hash)
         {
             if(hash == expected_hash.Text.ToLowerInvariant())
             {
@@ -235,7 +235,7 @@ namespace Hash_checker
         /// The exact hashing strategy to use is determined by the value of
         /// <see cref="algorithm"/>.
         /// </remarks>
-        private string Hash_file(string file_path)
+        private string HashFile(string file_path)
         {
             string result = null;
 

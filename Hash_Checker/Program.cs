@@ -13,7 +13,7 @@ namespace Hash_checker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hash_Checker_Form());
+            Application.Run(new HashCheckerForm());
         }
     }
 }
