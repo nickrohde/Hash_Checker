@@ -1,0 +1,7 @@
+.vs/
+Hash_Checker/Properties/
+bin/Debug/
+Hash_Checker/obj/
+*.config
+*.pdb
+*.resx
